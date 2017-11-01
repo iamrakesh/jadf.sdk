@@ -1,0 +1,75 @@
+import aQute.bnd.gradle.Bundle
+
+buildscript {
+	repositories {
+		mavenCentral()
+		dependencies { classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.4.0' }
+	}
+}
+
+plugins {
+	id 'net.researchgate.release' version '2.6.0'
+}
+
+repositories {
+	mavenCentral()
+}
+
+subprojects {
+
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'maven-publish'
+	
+	repositories {
+	   mavenCentral()
+	}
+
+	group='in.rakesh.autodesk'
+	description = "Java SDK for Autodesk forge developer API"
+	sourceCompatibility = 1.8
+
+	publishing {
+		publications {
+			bundles(MavenPublication) {
+				artifact bundle
+				artifact sourcesJar
+				artifact javadocJar
+			}
+		}
+	}
+
+	task bundle(type: Bundle, dependsOn: build) {
+		bndfile = project.name + '.bnd' // 'jadf.sdk.bnd'
+		from sourceSets.main.output
+	}
+
+	task sourcesJar(type: Jar, dependsOn: classes) {
+		classifier = 'sources'
+		from sourceSets.main.allSource
+	}
+
+	task javadocJar(type: Jar, dependsOn: javadoc) {
+		classifier = 'javadoc'
+		from javadoc.destinationDir
+	}
+
+	artifacts {
+		archives sourcesJar
+		archives javadocJar
+	}
+
+    dependencies {
+		compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+
+	    testCompile 'junit:junit:4.8.2'
+    }
+
+	release {
+		tagTemplate = '$version'
+	}
+}
+
+task build {
+	dependsOn getTasksByName('bundle', true)
+}

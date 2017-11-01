@@ -1,0 +1,6 @@
+dependencies {
+	compile project(':jadf.sdk.core')
+
+	compile group: 'org.jboss.resteasy', name: 'resteasy-client', version: '3.1.4.Final'
+	compile group: 'org.jboss.resteasy', name: 'resteasy-multipart-provider', version: '3.1.4.Final'
+}

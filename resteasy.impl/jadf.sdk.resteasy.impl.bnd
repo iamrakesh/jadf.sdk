@@ -1,0 +1,11 @@
+Bundle-Description: ${project.description}
+Bundle-SymbolicName: ${project.name}
+Bundle-Version: ${project.version}
+
+Import-Package: \
+	org.osgi.framework,\
+	!${project.group}.client.resteasy,\
+	*
+
+Export-Package: \
+	${project.group}.client.resteasy; version=${project.version}

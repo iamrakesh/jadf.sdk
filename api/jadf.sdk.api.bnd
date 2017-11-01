@@ -1,0 +1,21 @@
+Bundle-Description: ${project.description}
+Bundle-SymbolicName: ${project.name}
+Bundle-Version: ${project.version}
+
+Import-Package: \
+	org.osgi.framework,\
+	!in.rakesh.autodesk.*,\
+	*
+
+Export-Package: \
+	${project.group}.client; version=${project.version},\
+	${project.group}.client.bucket; version=${project.version},\
+	${project.group}.client.derivative; version=${project.version},\
+	${project.group}.client.io; version=${project.version},\
+	${project.group}.client.json; version=${project.version},\
+	${project.group}.client.rest; version=${project.version},\
+	${project.group}.client.rest.auth; version=${project.version},\
+	${project.group}.client.rest.entity; version=${project.version},\
+	${project.group}.client.rest.model; version=${project.version},\
+	${project.group}.client.rest.request; version=${project.version},\
+	${project.group}.model.*; version=${project.version}

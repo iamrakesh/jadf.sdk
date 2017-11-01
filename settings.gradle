@@ -1,0 +1,8 @@
+rootProject.name = 'jadf.sdk'
+
+include "api", "core", "resteasy.impl", "gson.impl"
+
+project(":api").name = rootProject.name + ".api"
+project(":core").name = rootProject.name +".core"
+project(":resteasy.impl").name = rootProject.name +".resteasy.impl"
+project(":gson.impl").name = rootProject.name +".gson.impl"

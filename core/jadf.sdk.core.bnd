@@ -1,0 +1,37 @@
+Bundle-Description: ${project.description}
+Bundle-SymbolicName: ${project.name}
+Bundle-Version: ${project.version}
+
+Import-Package: \
+	org.osgi.framework,\
+	!${project.group}.client.bucket.impl,\
+	!${project.group}.client.derivative.bubble,\
+	!${project.group}.client.derivative.impl,\
+	!${project.group}.client.factory,\
+	!${project.group}.client.impl,\
+	!${project.group}.client.io.local,\
+	!${project.group}.client.rest.auth.impl,\
+	!${project.group}.client.rest.entity.impl,\
+	!${project.group}.client.rest.impl,\
+	!${project.group}.client.rest.request.impl,\
+	!${project.group}.model.bubble.impl,\
+	!${project.group}.model.bucket.impl,\
+	!${project.group}.model.conversion.impl,\
+	!${project.group}.model.derivative.impl,\
+	!${project.group}.model.manifest.impl,\
+	*
+
+Export-Package: \
+	${project.group}.model.*; version=${project.version}
+
+Private-Package: \
+	${project.group}.client.bucket.impl,\
+	${project.group}.client.derivative.bubble,\
+	${project.group}.client.derivative.impl,\
+	${project.group}.client.factory,\
+	${project.group}.client.impl,\
+	${project.group}.client.io.local,\
+	${project.group}.client.rest.auth.impl,\
+	${project.group}.client.rest.entity.impl,\
+	${project.group}.client.rest.impl,\
+	${project.group}.client.rest.request.impl

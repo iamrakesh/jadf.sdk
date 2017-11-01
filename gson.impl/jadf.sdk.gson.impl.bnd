@@ -1,0 +1,13 @@
+Bundle-Description: ${project.description}
+Bundle-SymbolicName: ${project.name}
+Bundle-Version: ${project.version}
+
+Import-Package: \
+	org.osgi.framework,\
+	!${project.group}.client.gson,\
+	!${project.group}.client.gson.serializer,\
+	*
+
+Export-Package: \
+	${project.group}.client.gson; version=${project.version},\
+	${project.group}.client.gson.serializer; version=${project.version}

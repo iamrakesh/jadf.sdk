@@ -1,4 +1,5 @@
 ##jadf.sdk
+
 Modular Java sdk implementation for Autodesk Forge developer API
 
 Implementation is split in to below modules/sub-projects
@@ -52,4 +53,5 @@ Simple isnt it, configuration which is needed to create IAdfContext must contain
 
 
 ####License
+
 jadf.sdk is licensed under the terms of the MIT License. See the LICENSE file for details.

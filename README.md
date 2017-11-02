@@ -1,3 +1,4 @@
+
 ##jadf.sdk
 
 Modular Java sdk implementation for Autodesk Forge developer API
@@ -52,6 +53,6 @@ Simple isnt it, configuration which is needed to create IAdfContext must contain
 | root.folder | Yes | None | Root directory to download files to |
 
 
-####License
+###License
 
 jadf.sdk is licensed under the terms of the MIT License. See the LICENSE file for details.

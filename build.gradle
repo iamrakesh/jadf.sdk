@@ -25,11 +25,12 @@ subprojects {
 	   mavenCentral()
 	}
 
-	group='in.rakesh.autodesk'
+	group='in.iamrakesh.autodesk'
 	description = "Java SDK for Autodesk forge developer API"
 	sourceCompatibility = 1.8
 
 	publishing {
+
 		publications {
 			bundles(MavenPublication) {
 				artifact bundle
@@ -68,6 +69,8 @@ subprojects {
 	release {
 		tagTemplate = '$version'
 	}
+
+	afterReleaseBuild.dependsOn publish
 }
 
 task build {
